@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dynamic HTML Table</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>Dynamic HTML Table</h1>
+    <div>
+      <label for="dropdown">Select a value:</label>
+      <select id="dropdown">
+        <option value="">-- Select --</option>
+        <option value="fruits">Fruits</option>
+        <option value="vegetables">Vegetables</option>
+      </select>
+    </div>
+    <div id="tableContainer"></div>
+
+    <script>
+      $(document).ready(function () {
+        const data = {
+          fruits: [
+            { "name": "Apple", "color": "Red", "quantity": 10 },
+            { "name": "Banana", "color": "Yellow", "quantity": 15 },
+            { "name": "Orange", "color": "Orange", "quantity": 12 },
+          ],
+          vegetables: [
+            { "name": "Carrot", "color": "Orange", "quantity": 8 },
+            { "name": "Broccoli", "color": "Green", "quantity": 5 },
+            { "name": "Tomato", "color": "Red", "quantity": 7 },
+          ],
+        };
+
+        $("#dropdown").change(function () {
+          const value = $(this).val();
+          const dataArray = data[value];
+          const table = $("<table border='1'>").addClass("table");
+          const thead = $("<thead>").appendTo(table);
+          const tbody = $("<tbody>").appendTo(table);
+          const headers = Object.keys(dataArray[0]);
+
+          $("<tr>").appendTo(thead).append(
+            headers.map((header) => $("<th>").text(header))
+          );
+
+          dataArray.forEach((item) => {
+            $("<tr>").appendTo(tbody).append(
+              Object.values(item).map((value) => $("<td>").text(value))
+            );
+          });
+
+          $("#tableContainer").empty().append(table);
+        });
+      });
+    </script>
+  </body>
+</html>
