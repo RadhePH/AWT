@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VS3</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <!-- <script src="Library/jquery-3.6.3.min.js"></script> -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script>
+      $(document).ready(function() {
+        
+        $(".program-details").hide();
+        
+        $(".program-name").click(function() {
+          $(this).next(".program-details").slideToggle();
+        });
+     
+        $(".faculty-name").click(function() {
+            $('#faculty').dialog({
+              modal: true,
+              title: 'Popup Title',
+              width: 400,
+              height: 400,
+              buttons: {
+                'Close': function() {
+                  $(this).dialog('close');
+                }
+              }
+            });
+          });
+          $(".faculty-name2").click(function() {
+            $('#faculty2').dialog({
+              modal: true,
+              title: 'Popup Title',
+              width: 400,
+              height: 400,
+              buttons: {
+                'Close': function() {
+                  $(this).dialog('close');
+                }
+              }
+            });
+          });
+      });
+      
+    </script>
+  </head>
+  <body>
+    <h1>vs3</h1>
+    
+    <h2>School of Business</h2>
+    <ul>
+      <li>
+        <h3 class="program-name">Bachelor of Business Administration</h3>
+        <div class="program-details">
+          <p>This program prepares students for careers in business administration by providing a broad foundation in business principles.</p>
+          <ul>
+            <li>Duration: 4 years</li>
+            <li>Requirements: High school diploma</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <h3 class="program-name">Master of Business Administration</h3>
+        <div class="program-details">
+          <p>This program is designed for professionals who want to advance their careers in business by developing their leadership and management skills.</p>
+          <ul>
+            <li>Duration: 2 years</li>
+            <li>Requirements: Bachelor's degree in business or related field</li>
+          </ul>
+        </div>
+      </li>
+      
+      <div>
+        <h1>faculty-Details</h1>
+      <li>
+        <h3 class="faculty-name" >Dr.Karthik</h3>
+      </li>
+      <li>
+        <h3 class="faculty-name2" >Prof.Parmesh</h3>
+      </li>
+    </ul>
+      </div>
+    
+    <h2>School of Engineering</h2>
+    <ul>
+      <li>
+        <h3 class="program-name">Bachelor of Science in Computer Science</h3>
+        <div class="program-details">
+          <p>This program prepares students for careers in computer science by providing a rigorous education in programming, algorithms, and software development.</p>
+          <ul>
+            <li>Duration: 4 years</li>
+            <li>Requirements: High school diploma</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <h3 class="program-name">Master of Science in Electrical Engineering</h3>
+        <div class="program-details">
+          <p>This program is designed for professionals who want to advance their careers in electrical engineering by specializing in one of several areas, such as power systems or telecommunications.</p>
+          <ul>
+            <li>Duration: 2 years</li>
+            <li>Requirements: Bachelor's degree in electrical engineering or related field</li>
+          </ul>
+        </div>
+      </li>
+      
+      <li>
+        <div id="faculty" style="display:none;">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.rnF5lYG-qbpVBthCLkc1MwHaHa&pid=Api&P=0" height="150" width="150" alt="Profile picture">
+            <h2>Dr.Karthik</h2>
+            <p>MBA-Finance</p>
+            <ul>
+              <li><strong>Email:</strong> john.doe@example.com</li>
+              <li><strong>Phone:</strong> 123-456-7890</li>
+              <li><strong>Location:</strong> New York, NY</li>
+            </ul>
+          </div>
+          <div id="faculty2" style="display:none;">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.sS_74E7AiNZqHw1Ottnh-AAAAA&pid=Api&P=0" height="150" width="150" alt="Profile picture">
+            <h2>Prof.Paramesh</h2>
+            <p>MBA-Marketing</p>
+            <ul>
+              <li><strong>Email:</strong> paraam.doe@example.com</li>
+              <li><strong>Phone:</strong> 123-456-7890</li>
+              <li><strong>Location:</strong> New York, NY</li>
+            </ul>
+          </div>
+          
+
+</body>
+</html>
